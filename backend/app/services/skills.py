@@ -1,0 +1,118 @@
+"""Skill vocabulary used to find skills in resumes and job descriptions.
+
+Each entry maps a skill's display name to the lowercase spellings that count as
+a mention of it. Matching is case-insensitive except for CASE_SENSITIVE_SKILLS.
+"""
+
+SKILLS: dict[str, list[str]] = {
+    # Languages
+    "Python": ["python"],
+    "Java": ["java"],
+    "JavaScript": ["javascript", "js", "ecmascript"],
+    "TypeScript": ["typescript", "ts"],
+    "C++": ["c++", "cpp"],
+    "C#": ["c#", "csharp"],
+    "Go": ["golang"],
+    "Rust": ["rust"],
+    "Ruby": ["ruby"],
+    "PHP": ["php"],
+    "Kotlin": ["kotlin"],
+    "Swift": [],
+    "Scala": ["scala"],
+    "Bash": ["bash", "shell scripting"],
+    "SQL": ["sql"],
+    "HTML": ["html", "html5"],
+    "CSS": ["css", "css3"],
+    # Frontend
+    "React": ["react", "react.js", "reactjs"],
+    "Angular": ["angular"],
+    "Vue.js": ["vue", "vue.js", "vuejs"],
+    "Next.js": ["next.js", "nextjs"],
+    "Redux": ["redux"],
+    "Tailwind CSS": ["tailwind", "tailwindcss", "tailwind css"],
+    "Webpack": ["webpack"],
+    "Vite": ["vite"],
+    # Backend
+    "Node.js": ["node.js", "nodejs", "node"],
+    "Express": ["express.js", "expressjs"],
+    "FastAPI": ["fastapi"],
+    "Django": ["django"],
+    "Flask": ["flask"],
+    "Spring Boot": ["spring boot", "springboot"],
+    ".NET": [".net", "dotnet", "asp.net"],
+    "Ruby on Rails": ["rails", "ruby on rails"],
+    "GraphQL": ["graphql"],
+    "REST APIs": ["restful", "rest api", "rest apis"],
+    "gRPC": ["grpc"],
+    "Microservices": ["microservices", "microservice"],
+    # Databases
+    "PostgreSQL": ["postgresql", "postgres"],
+    "MySQL": ["mysql"],
+    "SQLite": ["sqlite"],
+    "MongoDB": ["mongodb", "mongo"],
+    "Redis": ["redis"],
+    "Elasticsearch": ["elasticsearch", "elastic search"],
+    "Cassandra": ["cassandra"],
+    "DynamoDB": ["dynamodb"],
+    "Oracle": ["oracle"],
+    "SQLAlchemy": ["sqlalchemy"],
+    # Cloud & DevOps
+    "AWS": ["aws", "amazon web services"],
+    "Azure": ["azure"],
+    "GCP": ["gcp", "google cloud"],
+    "Docker": ["docker"],
+    "Kubernetes": ["kubernetes", "k8s"],
+    "Terraform": ["terraform"],
+    "Ansible": ["ansible"],
+    "Jenkins": ["jenkins"],
+    "GitHub Actions": ["github actions"],
+    "CI/CD": ["ci/cd", "ci cd", "continuous integration", "continuous delivery", "continuous deployment"],
+    "Linux": ["linux"],
+    "Nginx": ["nginx"],
+    "Kafka": ["kafka"],
+    "RabbitMQ": ["rabbitmq"],
+    "Git": ["git"],
+    # Data & ML
+    "Machine Learning": ["machine learning", "ml"],
+    "Deep Learning": ["deep learning"],
+    "NLP": ["nlp", "natural language processing"],
+    "Computer Vision": ["computer vision"],
+    "TensorFlow": ["tensorflow"],
+    "PyTorch": ["pytorch"],
+    "scikit-learn": ["scikit-learn", "sklearn", "scikit learn"],
+    "Pandas": ["pandas"],
+    "NumPy": ["numpy"],
+    "Spark": ["pyspark", "apache spark"],
+    "Airflow": ["airflow"],
+    "Tableau": ["tableau"],
+    "Power BI": ["power bi", "powerbi"],
+    "Excel": ["microsoft excel", "ms excel"],
+    "LLMs": ["llm", "llms", "large language models"],
+    # Testing
+    "Pytest": ["pytest"],
+    "Jest": ["jest"],
+    "Selenium": ["selenium"],
+    "Cypress": ["cypress"],
+    "Unit Testing": ["unit testing", "unit tests"],
+    # Mobile
+    "Android": ["android"],
+    "iOS": ["ios"],
+    "React Native": ["react native"],
+    "Flutter": ["flutter"],
+    # Practices
+    "Agile": ["agile", "scrum", "kanban"],
+    "System Design": ["system design"],
+    "Data Structures": ["data structures"],
+    "Algorithms": ["algorithms"],
+    "OOP": ["oop", "object-oriented", "object oriented"],
+}
+
+# Skills whose names are ordinary words, so only an exact-case mention counts
+# ("Go" the language, not "go" the verb). Merged with the SKILLS aliases above.
+CASE_SENSITIVE_SKILLS: dict[str, list[str]] = {
+    "Go": ["Go"],
+    "Swift": ["Swift"],
+    "Spark": ["Spark"],
+    "Excel": ["Excel"],
+    "Express": ["Express"],
+}

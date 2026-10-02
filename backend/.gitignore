@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+resumelens.db
+uploads/
+.pytest_cache/
+dist/
+*.egg-info/
+logs/
