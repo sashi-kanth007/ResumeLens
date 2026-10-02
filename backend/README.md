@@ -4,8 +4,8 @@ ResumeLens compares a **resume (PDF)** with a **job description** and tells you 
 It returns three scores, the skills the resume has and lacks, and suggestions for improving it.
 
 This folder is the backend: a REST API built with **FastAPI**. It reads the PDF, runs the analysis with a
-small AI model, saves the result to a **SQLite** database, and returns it as JSON. The React frontend in
-`../frontend` is a separate app that calls this API.
+small AI model, saves the result to a **SQLite** database, and returns it as JSON. The mobile app in
+`../App` is a separate app that calls this API.
 
 ---
 
@@ -29,8 +29,8 @@ small AI model, saves the result to a **SQLite** database, and returns it as JSO
 
 ```
  ┌──────────────┐   PDF + job description    ┌───────────────────────────────────────────────┐
- │   Frontend   │ ─────────────────────────► │             FastAPI backend                    │
- │ (React/Vite) │ ◄───────────────────────── │                                               │
+ │  Mobile app  │ ─────────────────────────► │             FastAPI backend                    │
+ │    (Expo)    │ ◄───────────────────────── │                                               │
  └──────────────┘        JSON result         │  routers/analysis.py   ← HTTP endpoints        │
    or Swagger UI                             │        │                                      │
    at /docs                                  │        ├─► services/pdf_extractor.py           │
@@ -302,8 +302,8 @@ uvicorn app.main:app --reload --host 0.0.0.0
 The database file `resumelens.db` is created automatically. To start with an empty history, stop the server,
 delete the file, and start again.
 
-The frontend (`../frontend`, `npm install` then `npm run dev`) runs on `http://localhost:5173`, which is already
-allowed by the default `CORS_ORIGINS` setting.
+The mobile app (`../App`, `npm install` then `npx expo start`) connects through `EXPO_PUBLIC_API_URL` in its `.env`.
+Native builds need no CORS setup; to run the app on web, add `http://localhost:8081` to `CORS_ORIGINS`.
 
 ---
 
